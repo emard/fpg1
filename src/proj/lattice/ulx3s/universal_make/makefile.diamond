@@ -26,9 +26,9 @@ CLK0_OPTIONS = \
 VERILOG_FILES = \
   $(TOP_MODULE_FILE) \
   $(CLK0_FILE_NAME) \
+  ../../../../emard/pdp1_vga_typewriter.v \
   ../../../../emard/pdp1_terminal_fb.v \
   ../../../../emard/pdp1_terminal_charset.v \
-  ../../../../pdp1_vga_typewriter.v \
   ../../../../emard/emu.v \
   ../../../../emard/video/fake_differential.v
 
