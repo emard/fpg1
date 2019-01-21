@@ -1,0 +1,45 @@
+# ******* project, board and chip name *******
+PROJECT = pdp1
+BOARD = ulx3s
+# 12 25 45 85
+FPGA_SIZE = 25
+
+# ******* design files *******
+CONSTRAINTS = ../constraints/ulx3s_v20_segpdi.lpf
+TOP_MODULE = top_pdp1
+TOP_MODULE_FILE = ../../../../emard/$(TOP_MODULE).v
+
+CLK0_NAME = clk_25_shift_pixel_cpu
+CLK0_FILE_NAME = $(CLK0_NAME).v
+CLK0_OPTIONS = \
+  --input=25 \
+  --output=375 \
+  --s1=75 \
+  --s2=50
+
+VERILOG_FILES = \
+  $(TOP_MODULE_FILE) \
+  $(CLK0_FILE_NAME) \
+  ../../../../emard/pdp1_vga_typewriter.v \
+  ../../../../emard/pdp1_terminal_fb.v \
+  ../../../../emard/pdp1_terminal_charset.v \
+  ../../../../emard/emu.v \
+  ../../../../emard/video/fake_differential.v
+
+# *.vhd those files will be converted to *.v files with vhdl2vl (warning overwriting/deleting)
+VHDL_FILES = \
+  ../../../../emard/video/vga.vhd \
+  ../../../../emard/video/vga2dvid.vhd \
+  ../../../../emard/video/tmds_encoder.vhd
+
+READMEM_FILES = \
+  fiodec_charset.hex
+
+# synthesis options
+#YOSYS_OPTIONS = -noccu2
+
+SCRIPTS = ../scripts
+include $(SCRIPTS)/ulx3s_trellis.mk
+
+fiodec_charset.hex: ../../../../fiodec_charset.mif
+	../../../../emard/charset2readmemh.py $< $@
