@@ -1,7 +1,3 @@
-// synopsys translate_off
-`timescale 1 ps / 1 ps
-// synopsys translate_on
-
 /* This module is a probably overcomplicated (but for educational purposes) vector display implementation 
    attempt with a 1280 x 1024 @ 60 Hz output. It uses several M10K altsyncram instances to provide memory
    storage. To simulate phosphor decay, a classic straightforward approach would require at least 
