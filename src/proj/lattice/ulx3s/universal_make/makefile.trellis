@@ -26,6 +26,12 @@ VERILOG_FILES = \
   ../../../../emard/emu.v \
   ../../../../emard/video/fake_differential.v
 
+#  ../../../../emard/pdp1_vga_crt.v \
+#  ../../../../emard/pdp1_vga_rowbuffer.v \
+# todo: those two need RAM based shift register
+#  ../../../../emard/line_shift_register.v \
+#  ../../../../emard/pixel_ring_buffer.v \
+
 # *.vhd those files will be converted to *.v files with vhdl2vl (warning overwriting/deleting)
 VHDL_FILES = \
   ../../../../emard/video/vga.vhd \
