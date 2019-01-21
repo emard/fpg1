@@ -1,3 +1,5 @@
+] intentional # syntax # error [
+
 /* 1,6k of memory which holds a single line of pixels. Three of these are instantiated
    and chained together with 3 additional registers per line, so a 3x3 matrix is formed and
    various kernels can be applied (blur) */
@@ -10,7 +12,6 @@ module line_shift_register
   output [7:0] taps
 );
   // TODO this is just placeholder, code is missing
-intentional_syntax_error;
 
   /*
    altshift_taps  ALTSHIFT_TAPS_component (

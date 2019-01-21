@@ -1,3 +1,5 @@
+] intentional # syntax # error [
+
 /* Pixel ring buffer is a linear feedback shift register, 8k of memory with 8 taps. 
    It is used to store pixels visible on the type 30 CRT, as well as their current intensity  */
 module pixel_ring_buffer
@@ -8,7 +10,6 @@ module pixel_ring_buffer
   output [255:0] taps
 );
   // TODO this is just placeholder, code is missing
-intentional_syntax_error;
    
   /*
    altshift_taps  ALTSHIFT_TAPS_component (
@@ -31,4 +32,5 @@ intentional_syntax_error;
       ALTSHIFT_TAPS_component.tap_distance = 1024,
       ALTSHIFT_TAPS_component.width = 32;
   */
+
 endmodule
